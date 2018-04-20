@@ -3,7 +3,11 @@ img {
   width: 350px;
   border: white solid 5px;
 }
-
+#seconds{
+    color: red;
+    padding: 3px;
+    border: dashed 1px red; 
+}
 body {
   text-align: center;
   padding-top: 100px;

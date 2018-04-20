@@ -86,7 +86,7 @@ var game = {
 
     gameDiv.html("<h2>No time Left!</h2>");
     gameDiv.append(
-      "<h2>The Right Answer was: " + questions[this.questNumb].answer
+      "<h2>The Right Answer is: " + questions[this.questNumb].answer
     );
     gameDiv.append(
       "<img id='pic' src='" + questions[this.questNumb].image + "' />"
@@ -102,18 +102,13 @@ var game = {
   tally: function() {
     clearInterval(window.timer);
 
-    gameDiv.html("<h2>All done, heres how you did!</h2>");
+    gameDiv.html("<h2>Here are your results!</h2>");
 
     $("#seconds").text(this.counter);
 
     gameDiv.append("<h3>Correct Answers: " + this.correct + "</h3>");
     gameDiv.append("<h3>Incorrect Answers: " + this.incorrect + "</h3>");
-    gameDiv.append(
-      "<h3>Unanswered: " +
-        (questions.length - (this.incorrect + this.correct)) +
-        "</h3>"
-    );
-    gameDiv.append("<br><button id='start-over'>Start Over?</button>");
+    gameDiv.append("<br><button id='start-over'>Want another go?</button>");
   },
 
   chosen: function(x) {
@@ -132,9 +127,7 @@ var game = {
 
     gameDiv.html("<h2>Sorry!</h2>");
     gameDiv.append(
-      "<h3>The Right Answer was: " +
-        questions[this.questNumb].answer +
-        "</h3>"
+      "<h3>The Right Answer was: " + questions[this.questNumb].answer + "</h3>"
     );
     gameDiv.append("<img src='" + questions[this.questNumb].image + "' />");
 
